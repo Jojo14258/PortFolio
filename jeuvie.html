@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jeu de la vie</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Menu</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projets</a></li>
+							<li><a href="./Robot.html">Bases Robotique</a></li>
+							<li><a href="./PierreFeuilleCiseaux.html">Pierre Feuille Ciseaux</a></li>
+							<li><a href="./jeuvie.html">Jeu vie</a></li>
+							<li><a href="./LevelDesign.html">Level Design</a></li>
+							<li><a href="./ProgOriente.html">Programmation C#</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/jordan-amouyal-81163a226/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+							<li><a href="https://github.com/Numbred1" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">22 Février, 2023</span>
+									<h1>Réalisation d'un<br />
+									Jeu de la vie</h1>
+									<p>Inspiré du concept de Von Neumann, mon jeu de la vie propose <br/>
+										une perspective originale par rapport à la version de base. </p>
+								</header>
+								<main style="text-align:center">
+									<!-- game.html -->
+									<script src="JeuxVieScripts/lib/p5.min.js"></script>
+									<script src="JeuxVieScripts/lib/init.js"></script>
+									<script src="JeuxVieScripts/Cell.js"></script>
+									<script src="JeuxVieScripts/Grass.js"></script>
+									<script src="JeuxVieScripts/GrassEater.js"></script>
+									<script src="JeuxVieScripts/bombeffectground.js"></script>
+									<script src="JeuxVieScripts/PoisonedGrass.js"></script>
+									<script src="JeuxVieScripts/bombeffectstone.js"></script>
+									<script src="JeuxVieScripts/Rock.js"></script>
+									<script src="JeuxVieScripts/bomb.js"></script>
+									<script src="JeuxVieScripts/Predator.js"></script>
+									<script src="JeuxVieScripts/index.js"></script>
+									<div>
+										<script>
+											window.onload = function() 
+											{
+												let canvas = document.getElementById("gameCanvas");
+												
+												canvas.width = window.innerWidth;
+												canvas.height = window.innerHeight;
+											};	
+										</script>
+									</div>
+								</main>
+								<header>
+									<p>Ci-dessus une ancienne version (d'illustration) de mon jeu de la vie version hors-ligne.</p>
+								</header>
+								<hr/>
+								<h2>
+									Le projet
+								</h2>
+								<h4> Introduction </h4>
+								<p> 
+									L'emblématique jeu de la vie de Von Neumann, un automate cellulaire fascinant introduit par le mathématicien John Conway, se distingue par la simplicité avec laquelle il est possible de simuler des éléments de la vie. En reprenant les idées de son concept, j'ai pu concevoir une version personnalisée du jeu de la vie. </p>
+								
+								<h5>Cadre de travail</h5>
+									<p>
+										Ce projet a été réalisé en 16 heures de travail à l'aide sur logiciel Visual Studio Code. Un grand merci à Anthony Saccardo, étudiant à l'école 42 et animateur de TUMO, qui m'a guidé tout au long du projet en me fournissant notamment les bases du projet (site internet, environnement de programmation...), mais qui m'a aussi enseigné la programmation en JavaScript, la mise en place d'un serveur, l'utilisation de GitHub, de Node.js et de ses paquets (tels que Express et Socket.io).  </p>
+							
+								<h5>Fonctionnement</h5>
+								<p>
+									Mon jeu de la vie a pour thème la nature. Il existe diverses cellules : l'herbe, les mangeurs d'herbes, les prédateurs, l'herbe empoisonnée, la pierre. Chacune de ces cellules évolue au sein de cycles, où certaines disparaissent au profit d'autres à chaque itération, tout en permettant l'apparition de nouvelles cellules. </p>
+								
+									
+								<hr/>
+								<h2> Structure du projet </h2>
+									<p>Le projet est divisé en deux parties. D'un côté, la partie utilisateur (front-end), et de l'autre, la partie serveur (back-end).
+										<br/>
+										<h4>Front-end</h4>
+										Dans la partie front-end se trouve un site qui permet à plusieurs utilisateurs de visualiser simultanément la matrice et de placer graphiquement des cellules dans cette même matrice en cliquant. L'utilisateur peut également augmenter ou ralentir la vitesse à laquelle les cycles s'enchaînent. À noter : une protection empêche l'utilisateur de saturer le serveur en envoyant trop de requêtes.
+										  <br/><br/> 
+										<h4>Back-end</h4>
+										  Chaque action de l'utilisateur est transmise au serveur sous la forme d'un événement correspondant à cette action. Lorsqu'un événement est reçu, signifiant par exemple l'ajout graphique d'une cellule par un clic, le serveur procède à la modification de la matrice. Ensuite, cette matrice actualisée est renvoyée au site.    
+									</p>
+								<h2>Exemple</h2>
+								<pre><code>socket.on('click', (x, y, selection) => {
+	if (selection == 'cell-grass-eater'){
+		game.grid[y][x] = new GrassEater({x, y, game, grid: game.grid})
+	}
+})
+</code></pre>
+								<header>
+									<p>Fonction écoutant les clics sur la matrice de jeu et ajoutant une cellule de type GrassEater (mangeur d'herbe) aux coordonnées sélectionnées.</p>
+								</header>
+								<hr/>
+								<h2>Les types de cellules</h2>
+								<p> Passons en revue les divers types de cellules : </p>
+								<br/><br/>
+								<h3>L'Herbe</h3>
+								<p><span class="image left"><img src="./gifs/Grass.gif" alt="" /></span><br/> La cellule d'Herbe est l'une des seules cellules (avec le rocher et la bombe) qui ne meurt pas de faim avec le temps. <br/><br/> Une cellule d'herbe peut grandir toute seule, chaque descendant créant une nouvelle cellule d'herbe jusqu'à éventuellement remplir la matrice entière. Dans la configuration de mon jeu, l'herbe est indispensable à la vie. Sans elle, il n'y a pas de mangeurs d'herbe, et donc pas de prédateurs.  </p>
+								<br/><br/>
+								<h3>Les mangeurs d'herbes</h3>
+								<p><span class="image left"><img src="./gifs/GrassEater.gif" alt="" /></span>Comme leur nom l'indique, les cellules mangeuses d'herbe sont herbivores.<br/><br/> Elles ont besoin d'herbe pour se reproduire et survivre. Ainsi, si une cellule d'herbe n'est pas dans leur périmètre (zone alentour) pendant plus de 30 cycles, ces dernières meurent. Après avoir mangé 5 cellules d'herbe, elles produisent une nouvelle cellule mangeuse d'herbe. En mangeant, la cellule d'herbe est détruite.</p>
+								<br/><br/>
+								<h3>L'Herbe empoisonnée</h3>
+								<p><span class="image left"><img src="./gifs/PoisonedGrass.gif" alt="" /></span>Une copie conforme de l'herbe à quelques différences près. <br/><br/>Si un mangeur d'herbe consomme cette cellule, il meurt et l'herbe en question disparaît. Cette herbe pousse moins rapidement que l'herbe normale et devient ordinaire après 250 cycles.</p>
+								<br/> <br/><br/><br/>
+								<h3>Les prédateurs</h3>
+								<p><span class="image left"><img src="./gifs/Predator.gif" alt="" /></span>Les prédateurs ne se nourrissent que de mangeurs d'herbes. <br/><br/>Ils balayent la zone dans un rayon de 50 cellules autour d'eux à la recherche de proies herbivores avant de se diriger vers l'une d'elles. Si un prédateur ne se nourrit pas pendant 40 cycles, il meurt de faim. Un nouveau descendant apparaît dès la consommation du cinquième mangeur d'herbe.</p>
+								<br/><br/><br/>
+								<h3>La bombe</h3>
+								<p><span class="image left"><img src="./gifs/bomb.gif" alt="" /></span>La bombe constitue l'unique élément artificiel du jeu. <br/><br/> Cette cellule demeure inerte. Dès qu'un herbivore se situe dans un rayon de 25 pixels autour de la bombe, celle-ci se dirige vers l'herbivore avant d'exploser, créant un cratère de dimension aléatoire (et détruisant les cellules environnantes) qui persiste pendant 70 cycles.</p>
+								<br/><br/><br/>
+								<h3>La Pierre</h3>
+								<p><span class="image left"><img src="./gifs/Rock.gif" alt="" /></span>Une cellule totalement inerte et uniquement destructible par une bombe. <br/><br/>Sa solidité en fait le rempart idéal face à tout ce qui bouge : mangeurs d'herbes, bombes, prédateurs, etc. Le rocher restera en place tant qu'il n'aura pas été détruit par une bombe ou retiré par l'utilisateur.</p>
+								
+								<br/><br/>
+								<hr/>
+								<h2>Code source du projet</h2>
+								<p> Le projet est disponible en open-source sur GitHub en cliquant sur le bouton ci-dessous. </p>
+										<ul class="actions">
+											<li><a href="https://github.com/Numbred1/JeuxDeLaVie" class="button primary">Accéder au code source</a></li>
+										</ul>
+							</section>
+								
+								
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<form method="POST" action="https://formspree.io/f/xoqgwypp">
+							<div class="fields">
+								<div class="field">
+									<label for="name">Nom</label>
+									<input type="text" name="name" id="name" required>
+								</div>
+								<div class="field">
+									<label for="email">Email</label>
+									<input type="text" name="email" id="email" required>
+								</div>
+								<div class="field">
+									<label for="message">Message</label>
+									<textarea name="message" id="message" rows="3"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Envoyer un message" /></li>
+							</ul>
+						</form>
+					</section>
+					<section class="split contact">
+						<section class="alt">
+							<h3>Addresse</h3>
+							<p>Lyon 69003<p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p>jordan.amouyal@outlook.fr</p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="https://www.linkedin.com/in/jordan-amouyal-81163a226/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+								<li><a href="https://github.com/Numbred1" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Jordan Tout droits réservés</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

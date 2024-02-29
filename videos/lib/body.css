@@ -1,0 +1,41 @@
+.body-content {
+  height: 800px;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.body-left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.body-part {
+  height: max-content;
+  width: 100%;
+  min-height: 30px;
+  padding: 15%;
+  font-size: 40px;
+  background-color: var(--primary-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow-color) 0px 1px 10px;
+  border: none;
+  box-sizing: content-box;
+  color: var(--primary-font-color);
+}
+
+.body-part:hover {
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+canvas {
+  height: min-content;
+  background-color: white;
+  border: 3px solid var(--primary-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow-color) 0px 1px 10px;
+}

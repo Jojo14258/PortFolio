@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ProgC#</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Menu</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projets</a></li>
+							<li><a href="./Robot.html">Bases Robotique</a></li>
+							<li><a href="./PierreFeuilleCiseaux.html">Pierre Feuille Ciseaux</a></li>
+							<li><a href="./jeuvie.html">Jeu vie</a></li>
+							<li><a href="./LevelDesign.html">Level Design</a></li>
+							<li><a href="./ProgOriente.html">Programmation C#</a></li>
+							</ul>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/jordan-amouyal-81163a226/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+							<li><a href="https://github.com/Numbred1" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">25 Novembre, 2023 </span>
+									<h1>Programmation<br />
+									en C#</h1>
+									<p>Dans ce projet, nous découvrons la programmation orientée objet en C# avec Unity, offrant ainsi une <br/> approche ludique et enrichissante pour maîtriser ce langage.</p>
+								</header>
+								<video width="320" height="240" controls style="width: 100%; height: auto;">
+									<source src="./videos/ProgOriente.mp4" type="video/mp4"/>
+								</video>
+								<hr/>
+								<h2>Introduction</h2>
+								<p>Au lycée, notamment en spécialité NSI, l'enseignement se limite généralement au langage Python. Cependant, grâce à ce projet, j'ai pu élargir mes compétences en explorant un autre langage, le C#. Cela m'a permis de découvrir les fondamentaux du langage C# et d'acquérir une compréhension approfondie de ses spécificités, en mettant particulièrement l'accent sur la syntaxe et l'orienté objet.</p>
+								<br/>
+								<h2>Objectif</h2>
+								<p> L'objectif de ce projet est d'apprendre le langage C# de manière progressive en programmant diverses mécaniques telles que les sauts, les déplacements, la gestion de la vie, du score, de la mort, des dégâts, etc. À la fin, l'ensemble aboutit à un prototype de jeu de parcours fonctionnel. </p>
+								<br/>
+								<h2>Les mécaniques</h2>
+								<p>À chaque fois qu'il meurt, le joueur réapparaît au début du parcours (lobby). Il peut rencontrer plusieurs façons de mourir, présentées ci-dessous. </p>
+								<h3>Les chutes de map</h3>
+								<p><span class="image left"><img src="./gifs/SortieMap.gif" alt="" /></span>Dès que le joueur tombe de la map, il va respawn (réapparaître) au point de départ. <br/><br/> Le dessous de la carte est composé d'un vaste sol invisible et transparent. Au contact du joueur, cela déclenche <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/Mort.cs">le script de mort.</a></p>
+								<br/><br/><br/>
+								<h3>Les murs pièges</h3>
+								<p><span class="image right"><img src="./gifs/Mur.gif" alt="" /></span>Les murs pièges représentent un obstacle majeur vers la fin du parcours ; le joueur doit les éviter tout en maintenant une vitesse élevée. <br/><br/>Ils opèrent selon le même principe que le mur invisible mentionné précédemment : au contact, <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/Mort.cs">le script de mort</a> est déclenché. </p>
+								<br/><br/><br/>
+								<h3>La potion de mort</h3>
+								<p><span class="image left"><img src="./gifs/PotionMort.gif" alt="" /></span>Un piège qui peut se révéler fatal pour le joueur s'il n'est pas attentif à son environnement. <br/><br/>Au contact avec le joueur, la potion de mort déclenche directement <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/Mort.cs">le script de mort</a>. Sa couleur noire est révélatrice de sa dangerosité.</p>
+								<br/><br/><br/>
+								<h3>La potion de soin</h3>
+								<p><span class="image right"><img src="./gifs/PotionVie.gif" alt="" /></span>Une aide qui peut se révéler précieuse si le joueur est opportuniste.<br/><br/>Au contact avec le joueur, la potion de vie soigne le joueur de 10 points de vie (sur 100) grâce au script <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/PvRamassable.cs">"PvRamassable".</a></p>
+								<br/><br/><br/>
+								<h3>La tourelle</h3>
+								<p><span class="image left"><img src="./gifs/Tourelles.gif" alt="" /></span>La tourelle représente l'un des obstacles les plus difficiles à éviter en raison de ses projectiles. <br/><br/>Elle envoie des projectiles dans toutes les directions qui, au contact, retirent 10 points de vie au joueur via le script<a href ="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/BalleProjectile.cs"> "BalleProjectile". </a></p>
+								<br/><br/><br/>
+								<h3>La pièce</h3>
+								<p><span class="image right"><img src="./gifs/Pieces.gif" alt="" /></span>Conçu pour les joueurs qui apprécient les récompenses tout en étant prêts à prendre des risques. <br/><br/>La pièce ajoute 10 points au score du joueur au toucher, grâce au script <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/PointRamassable.cs"> "PointRamassable". </a></p>
+								<br/><br/><br/>
+								<h3>La plateforme de boost</h3>
+								<p><span class="image left"><img src="./gifs/Boost.gif" alt="" /></span>La plateforme de boost ajoute un défi supplémentaire au jeu.<br/><br/>Dès que le joueur passe dessus, sa vitesse est augmentée de 25 (la vitesse étant à 10 par défaut) pendant une durée de 5 secondes. Ensuite, il doit attendre 5 secondes pour bénéficier à nouveau du boost. Tout cela est géré via le script <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/boost.cs">"boost". </a> </p>
+								<br/><br/><br/>
+								<h2>Lien GitHub</h2>
+								<p>Cliquez sur le bouton pour accéder aux fichiers source du projet.</p>
+								<ul class="actions">
+									<li><a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp" class="button primary">Accéder au code source</a></li>
+								</ul>
+								<h2>Tester le jeu</h2>
+								<iframe id='webgl_iframe' frameborder="0" allow="autoplay; fullscreen; vr" allowfullscreen="" allowvr=""
+								mozallowfullscreen="true" src="https://play.unity.com/webgl/69b272dd-85a8-4d0e-ba7b-68748ccb8114?screenshot=false&embedType=embed"  width="810"
+								height="640" onmousewheel="" webkitallowfullscreen="true"></iframe>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<form method="POST" action="https://formspree.io/f/xoqgwypp">
+							<div class="fields">
+								<div class="field">
+									<label for="name">Nom</label>
+									<input type="text" name="name" id="name" required>
+								</div>
+								<div class="field">
+									<label for="email">Email</label>
+									<input type="text" name="email" id="email" required>
+								</div>
+								<div class="field">
+									<label for="message">Message</label>
+									<textarea name="message" id="message" rows="3"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Envoyer un message" /></li>
+							</ul>
+						</form>
+					</section>
+					<section class="split contact">
+						<section class="alt">
+							<h3>Addresse</h3>
+							<p>Lyon 69003<p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p>jordan.amouyal@outlook.fr</p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="https://www.linkedin.com/in/jordan-amouyal-81163a226/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+								<li><a href="https://github.com/Numbred1" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Jordan Tout droits réservés</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
