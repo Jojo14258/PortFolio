@@ -9,8 +9,8 @@
 		<title>ProgC#</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
@@ -19,13 +19,13 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">Menu</a>
+						<a href="../index.html" class="logo">Menu</a>
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="index.html">Projets</a></li>
+							<li><a href="../index.html">Projets</a></li>
 							<li><a href="./Robot.html">Bases Robotique</a></li>
 							<li><a href="./PierreFeuilleCiseaux.html">Pierre Feuille Ciseaux</a></li>
 							<li><a href="./jeuvie.html">Jeu vie</a></li>
@@ -51,7 +51,7 @@
 									<p>Dans ce projet, nous découvrons la programmation orientée objet en C# avec Unity, offrant ainsi une <br/> approche ludique et enrichissante pour maîtriser ce langage.</p>
 								</header>
 								<video width="320" height="240" controls style="width: 100%; height: auto;">
-									<source src="./videos/ProgOriente.mp4" type="video/mp4"/>
+									<source src="../videos/ProgOriente.mp4" type="video/mp4"/>
 								</video>
 								<hr/>
 								<h2>Introduction</h2>
@@ -63,25 +63,25 @@
 								<h2>Les mécaniques</h2>
 								<p>À chaque fois qu'il meurt, le joueur réapparaît au début du parcours (lobby). Il peut rencontrer plusieurs façons de mourir, présentées ci-dessous. </p>
 								<h3>Les chutes de map</h3>
-								<p><span class="image left"><img src="./gifs/SortieMap.gif" alt="" /></span>Dès que le joueur tombe de la map, il va respawn (réapparaître) au point de départ. <br/><br/> Le dessous de la carte est composé d'un vaste sol invisible et transparent. Au contact du joueur, cela déclenche <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/Mort.cs">le script de mort.</a></p>
+								<p><span class="image left"><img src="../gifs/SortieMap.gif" alt="" /></span>Dès que le joueur tombe de la map, il va respawn (réapparaître) au point de départ. <br/><br/> Le dessous de la carte est composé d'un vaste sol invisible et transparent. Au contact du joueur, cela déclenche <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/Mort.cs">le script de mort.</a></p>
 								<br/><br/><br/>
 								<h3>Les murs pièges</h3>
-								<p><span class="image right"><img src="./gifs/Mur.gif" alt="" /></span>Les murs pièges représentent un obstacle majeur vers la fin du parcours ; le joueur doit les éviter tout en maintenant une vitesse élevée. <br/><br/>Ils opèrent selon le même principe que le mur invisible mentionné précédemment : au contact, <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/Mort.cs">le script de mort</a> est déclenché. </p>
+								<p><span class="image right"><img src="../gifs/Mur.gif" alt="" /></span>Les murs pièges représentent un obstacle majeur vers la fin du parcours ; le joueur doit les éviter tout en maintenant une vitesse élevée. <br/><br/>Ils opèrent selon le même principe que le mur invisible mentionné précédemment : au contact, <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/Mort.cs">le script de mort</a> est déclenché. </p>
 								<br/><br/><br/>
 								<h3>La potion de mort</h3>
-								<p><span class="image left"><img src="./gifs/PotionMort.gif" alt="" /></span>Un piège qui peut se révéler fatal pour le joueur s'il n'est pas attentif à son environnement. <br/><br/>Au contact avec le joueur, la potion de mort déclenche directement <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/Mort.cs">le script de mort</a>. Sa couleur noire est révélatrice de sa dangerosité.</p>
+								<p><span class="image left"><img src="../gifs/PotionMort.gif" alt="" /></span>Un piège qui peut se révéler fatal pour le joueur s'il n'est pas attentif à son environnement. <br/><br/>Au contact avec le joueur, la potion de mort déclenche directement <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/Mort.cs">le script de mort</a>. Sa couleur noire est révélatrice de sa dangerosité.</p>
 								<br/><br/><br/>
 								<h3>La potion de soin</h3>
-								<p><span class="image right"><img src="./gifs/PotionVie.gif" alt="" /></span>Une aide qui peut se révéler précieuse si le joueur est opportuniste.<br/><br/>Au contact avec le joueur, la potion de vie soigne le joueur de 10 points de vie (sur 100) grâce au script <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/PvRamassable.cs">"PvRamassable".</a></p>
+								<p><span class="image right"><img src="../gifs/PotionVie.gif" alt="" /></span>Une aide qui peut se révéler précieuse si le joueur est opportuniste.<br/><br/>Au contact avec le joueur, la potion de vie soigne le joueur de 10 points de vie (sur 100) grâce au script <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/PvRamassable.cs">"PvRamassable".</a></p>
 								<br/><br/><br/>
 								<h3>La tourelle</h3>
-								<p><span class="image left"><img src="./gifs/Tourelles.gif" alt="" /></span>La tourelle représente l'un des obstacles les plus difficiles à éviter en raison de ses projectiles. <br/><br/>Elle envoie des projectiles dans toutes les directions qui, au contact, retirent 10 points de vie au joueur via le script<a href ="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/BalleProjectile.cs"> "BalleProjectile". </a></p>
+								<p><span class="image left"><img src="../gifs/Tourelles.gif" alt="" /></span>La tourelle représente l'un des obstacles les plus difficiles à éviter en raison de ses projectiles. <br/><br/>Elle envoie des projectiles dans toutes les directions qui, au contact, retirent 10 points de vie au joueur via le script<a href ="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/BalleProjectile.cs"> "BalleProjectile". </a></p>
 								<br/><br/><br/>
 								<h3>La pièce</h3>
-								<p><span class="image right"><img src="./gifs/Pieces.gif" alt="" /></span>Conçu pour les joueurs qui apprécient les récompenses tout en étant prêts à prendre des risques. <br/><br/>La pièce ajoute 10 points au score du joueur au toucher, grâce au script <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/PointRamassable.cs"> "PointRamassable". </a></p>
+								<p><span class="image right"><img src="../gifs/Pieces.gif" alt="" /></span>Conçu pour les joueurs qui apprécient les récompenses tout en étant prêts à prendre des risques. <br/><br/>La pièce ajoute 10 points au score du joueur au toucher, grâce au script <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/PointRamassable.cs"> "PointRamassable". </a></p>
 								<br/><br/><br/>
 								<h3>La plateforme de boost</h3>
-								<p><span class="image left"><img src="./gifs/Boost.gif" alt="" /></span>La plateforme de boost ajoute un défi supplémentaire au jeu.<br/><br/>Dès que le joueur passe dessus, sa vitesse est augmentée de 25 (la vitesse étant à 10 par défaut) pendant une durée de 5 secondes. Ensuite, il doit attendre 5 secondes pour bénéficier à nouveau du boost. Tout cela est géré via le script <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/boost.cs">"boost". </a> </p>
+								<p><span class="image left"><img src="../gifs/Boost.gif" alt="" /></span>La plateforme de boost ajoute un défi supplémentaire au jeu.<br/><br/>Dès que le joueur passe dessus, sa vitesse est augmentée de 25 (la vitesse étant à 10 par défaut) pendant une durée de 5 secondes. Ensuite, il doit attendre 5 secondes pour bénéficier à nouveau du boost. Tout cela est géré via le script <a href="https://github.com/Numbred1/Unity_ProgOrienteCSharp/blob/master/Assets/MesScripts/boost.cs">"boost". </a> </p>
 								<br/><br/><br/>
 								<h2>Lien GitHub</h2>
 								<p>Cliquez sur le bouton pour accéder aux fichiers source du projet.</p>
@@ -146,13 +146,13 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.scrollex.min.js"></script>
+		<script src="../assets/js/jquery.scrolly.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>

@@ -9,8 +9,8 @@
 		<title>Jeu de la vie</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
@@ -19,13 +19,13 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">Menu</a>
+						<a href="../index.html" class="logo">Menu</a>
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="index.html">Projets</a></li>
+							<li><a href="../index.html">Projets</a></li>
 							<li><a href="./Robot.html">Bases Robotique</a></li>
 							<li><a href="./PierreFeuilleCiseaux.html">Pierre Feuille Ciseaux</a></li>
 							<li><a href="./jeuvie.html">Jeu vie</a></li>
@@ -52,18 +52,18 @@
 								</header>
 								<main style="text-align:center">
 									<!-- game.html -->
-									<script src="JeuxVieScripts/lib/p5.min.js"></script>
-									<script src="JeuxVieScripts/lib/init.js"></script>
-									<script src="JeuxVieScripts/Cell.js"></script>
-									<script src="JeuxVieScripts/Grass.js"></script>
-									<script src="JeuxVieScripts/GrassEater.js"></script>
-									<script src="JeuxVieScripts/bombeffectground.js"></script>
-									<script src="JeuxVieScripts/PoisonedGrass.js"></script>
-									<script src="JeuxVieScripts/bombeffectstone.js"></script>
-									<script src="JeuxVieScripts/Rock.js"></script>
-									<script src="JeuxVieScripts/bomb.js"></script>
-									<script src="JeuxVieScripts/Predator.js"></script>
-									<script src="JeuxVieScripts/index.js"></script>
+									<script src="../JeuxVieScripts/lib/p5.min.js"></script>
+									<script src="../JeuxVieScripts/lib/init.js"></script>
+									<script src="../JeuxVieScripts/Cell.js"></script>
+									<script src="../JeuxVieScripts/Grass.js"></script>
+									<script src="../JeuxVieScripts/GrassEater.js"></script>
+									<script src="../JeuxVieScripts/bombeffectground.js"></script>
+									<script src="../JeuxVieScripts/PoisonedGrass.js"></script>
+									<script src="../JeuxVieScripts/bombeffectstone.js"></script>
+									<script src="../JeuxVieScripts/Rock.js"></script>
+									<script src="../JeuxVieScripts/bomb.js"></script>
+									<script src="../JeuxVieScripts/Predator.js"></script>
+									<script src="../JeuxVieScripts/index.js"></script>
 									<div>
 										<script>
 											window.onload = function() 
@@ -121,22 +121,22 @@
 								<p> Passons en revue les divers types de cellules : </p>
 								<br/><br/>
 								<h3>L'Herbe</h3>
-								<p><span class="image left"><img src="./gifs/Grass.gif" alt="" /></span><br/> La cellule d'Herbe est l'une des seules cellules (avec le rocher et la bombe) qui ne meurt pas de faim avec le temps. <br/><br/> Une cellule d'herbe peut grandir toute seule, chaque descendant créant une nouvelle cellule d'herbe jusqu'à éventuellement remplir la matrice entière. Dans la configuration de mon jeu, l'herbe est indispensable à la vie. Sans elle, il n'y a pas de mangeurs d'herbe, et donc pas de prédateurs.  </p>
+								<p><span class="image left"><img src="../gifs/Grass.gif" alt="" /></span><br/> La cellule d'Herbe est l'une des seules cellules (avec le rocher et la bombe) qui ne meurt pas de faim avec le temps. <br/><br/> Une cellule d'herbe peut grandir toute seule, chaque descendant créant une nouvelle cellule d'herbe jusqu'à éventuellement remplir la matrice entière. Dans la configuration de mon jeu, l'herbe est indispensable à la vie. Sans elle, il n'y a pas de mangeurs d'herbe, et donc pas de prédateurs.  </p>
 								<br/><br/>
 								<h3>Les mangeurs d'herbes</h3>
-								<p><span class="image left"><img src="./gifs/GrassEater.gif" alt="" /></span>Comme leur nom l'indique, les cellules mangeuses d'herbe sont herbivores.<br/><br/> Elles ont besoin d'herbe pour se reproduire et survivre. Ainsi, si une cellule d'herbe n'est pas dans leur périmètre (zone alentour) pendant plus de 30 cycles, ces dernières meurent. Après avoir mangé 5 cellules d'herbe, elles produisent une nouvelle cellule mangeuse d'herbe. En mangeant, la cellule d'herbe est détruite.</p>
+								<p><span class="image left"><img src="../gifs/GrassEater.gif" alt="" /></span>Comme leur nom l'indique, les cellules mangeuses d'herbe sont herbivores.<br/><br/> Elles ont besoin d'herbe pour se reproduire et survivre. Ainsi, si une cellule d'herbe n'est pas dans leur périmètre (zone alentour) pendant plus de 30 cycles, ces dernières meurent. Après avoir mangé 5 cellules d'herbe, elles produisent une nouvelle cellule mangeuse d'herbe. En mangeant, la cellule d'herbe est détruite.</p>
 								<br/><br/>
 								<h3>L'Herbe empoisonnée</h3>
-								<p><span class="image left"><img src="./gifs/PoisonedGrass.gif" alt="" /></span>Une copie conforme de l'herbe à quelques différences près. <br/><br/>Si un mangeur d'herbe consomme cette cellule, il meurt et l'herbe en question disparaît. Cette herbe pousse moins rapidement que l'herbe normale et devient ordinaire après 250 cycles.</p>
+								<p><span class="image left"><img src="../gifs/PoisonedGrass.gif" alt="" /></span>Une copie conforme de l'herbe à quelques différences près. <br/><br/>Si un mangeur d'herbe consomme cette cellule, il meurt et l'herbe en question disparaît. Cette herbe pousse moins rapidement que l'herbe normale et devient ordinaire après 250 cycles.</p>
 								<br/> <br/><br/><br/>
 								<h3>Les prédateurs</h3>
-								<p><span class="image left"><img src="./gifs/Predator.gif" alt="" /></span>Les prédateurs ne se nourrissent que de mangeurs d'herbes. <br/><br/>Ils balayent la zone dans un rayon de 50 cellules autour d'eux à la recherche de proies herbivores avant de se diriger vers l'une d'elles. Si un prédateur ne se nourrit pas pendant 40 cycles, il meurt de faim. Un nouveau descendant apparaît dès la consommation du cinquième mangeur d'herbe.</p>
+								<p><span class="image left"><img src="../gifs/Predator.gif" alt="" /></span>Les prédateurs ne se nourrissent que de mangeurs d'herbes. <br/><br/>Ils balayent la zone dans un rayon de 50 cellules autour d'eux à la recherche de proies herbivores avant de se diriger vers l'une d'elles. Si un prédateur ne se nourrit pas pendant 40 cycles, il meurt de faim. Un nouveau descendant apparaît dès la consommation du cinquième mangeur d'herbe.</p>
 								<br/><br/><br/>
 								<h3>La bombe</h3>
-								<p><span class="image left"><img src="./gifs/bomb.gif" alt="" /></span>La bombe constitue l'unique élément artificiel du jeu. <br/><br/> Cette cellule demeure inerte. Dès qu'un herbivore se situe dans un rayon de 25 pixels autour de la bombe, celle-ci se dirige vers l'herbivore avant d'exploser, créant un cratère de dimension aléatoire (et détruisant les cellules environnantes) qui persiste pendant 70 cycles.</p>
+								<p><span class="image left"><img src="../gifs/bomb.gif" alt="" /></span>La bombe constitue l'unique élément artificiel du jeu. <br/><br/> Cette cellule demeure inerte. Dès qu'un herbivore se situe dans un rayon de 25 pixels autour de la bombe, celle-ci se dirige vers l'herbivore avant d'exploser, créant un cratère de dimension aléatoire (et détruisant les cellules environnantes) qui persiste pendant 70 cycles.</p>
 								<br/><br/><br/>
 								<h3>La Pierre</h3>
-								<p><span class="image left"><img src="./gifs/Rock.gif" alt="" /></span>Une cellule totalement inerte et uniquement destructible par une bombe. <br/><br/>Sa solidité en fait le rempart idéal face à tout ce qui bouge : mangeurs d'herbes, bombes, prédateurs, etc. Le rocher restera en place tant qu'il n'aura pas été détruit par une bombe ou retiré par l'utilisateur.</p>
+								<p><span class="image left"><img src="../gifs/Rock.gif" alt="" /></span>Une cellule totalement inerte et uniquement destructible par une bombe. <br/><br/>Sa solidité en fait le rempart idéal face à tout ce qui bouge : mangeurs d'herbes, bombes, prédateurs, etc. Le rocher restera en place tant qu'il n'aura pas été détruit par une bombe ou retiré par l'utilisateur.</p>
 								
 								<br/><br/>
 								<hr/>
@@ -201,13 +201,13 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>
